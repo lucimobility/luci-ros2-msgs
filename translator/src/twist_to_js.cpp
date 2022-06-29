@@ -1,14 +1,14 @@
 #include "../include/translator/twist_to_js.h"
 
-void TwistToJs::twistCallback(const geometry_msgs::TwistConstPtr& msg)
+void TwistToJs::twistCallback(const geometry_msgs::msg::TwistConstPtr msg)
 {
-    float xVel = msg->linear.x;
-    float yVel = msg->linear.y;
+    float xVel = msg.linear.x;
+    float yVel = msg.linear.y;
 
     int jsFB = 100;
     int jsLR = 100;
 
-    std::cout << "MSG recieved ... " << msg->linear.x << std::endl;
+    std::cout << "MSG recieved ... " << msg.linear.x << std::endl;
     if (xVel > 0)
     {
         jsFB = 130;
@@ -28,20 +28,23 @@ void TwistToJs::twistCallback(const geometry_msgs::TwistConstPtr& msg)
 
     // Publish info
     translator::luci_joystick jsMsg;
-    jsMsg.forwardBack = jsFB;
-    jsMsg.leftRight = jsLR;
+    jsMsg.forward_back = jsFB;
+    jsMsg.left_right = jsLR;
     this->publisher.publish(jsMsg);
 }
 
-void TwistToJs::run() { ros::spin(); }
+// void TwistToJs::run() { rclcpp::spin(); }
 
 int main(int argc, char** argv)
 {
 
-    ros::init(argc, argv, "js_interface_node");
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<TwistToJs>();
+    // ros::init(argc, argv, "js_interface_node");
 
     TwistToJs twistConverter;
-    twistConverter.run();
+    rclcpp::spin(node);
+    // twistConverter.run();
 
     // ros::NodeHandle node_handle;
     // ros::Publisher publisher = node_handle.advertise<std_msgs::String>("joystick_topic", 1);
