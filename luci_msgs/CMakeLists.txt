@@ -27,6 +27,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/LuciJoystick.msg"
  )
 
+
 #  find_package(LuciJoystick REQUIRED)
 
 # add_message_files(
@@ -147,9 +148,9 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 #   ${catkin_INCLUDE_DIRS}
 # )
 
-add_executable(js_interface_node src/twist_to_js.cpp)
+# add_executable(js_interface_node src/twist_to_js.cpp)
 # target_link_libraries(js_interface_node ${catkin_LIBRARIES})
-ament_target_dependencies(js_interface_node "rclcpp" "geometry_msgs" "std_msgs")
+# ament_target_dependencies(js_interface_node "rclcpp" "geometry_msgs" "std_msgs")
 ament_package()
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
