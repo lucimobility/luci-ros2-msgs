@@ -1,0 +1,16 @@
+float32 front_fb 
+float32 front_rl
+float32 front_right_fb
+float32 front_right_rl
+float32 front_left_fb
+float32 front_left_rl
+float32 right_fb
+float32 right_rl
+float32 left_fb
+float32 left_rl
+float32 back_right_fb
+float32 back_right_rl
+float32 back_left_fb
+float32 back_left_rl
+float32 back_fb
+float32 back_rl
