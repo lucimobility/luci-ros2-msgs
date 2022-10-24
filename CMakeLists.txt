@@ -10,7 +10,8 @@ find_package(rosidl_default_generators REQUIRED)
 # Generate the message types
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/LuciJoystick.msg"
-  "msg/LuciScaling.msg"
+  "msg/LuciZoneScaling.msg"
+  "msg/LuciJoystickScaling.msg"
  )
 
  ament_package()
