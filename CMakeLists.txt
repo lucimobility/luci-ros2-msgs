@@ -12,6 +12,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/LuciJoystick.msg"
   "msg/LuciZoneScaling.msg"
   "msg/LuciJoystickScaling.msg"
+  "msg/LuciDriveMode.msg"
  )
 
  ament_package()
