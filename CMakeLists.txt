@@ -1,12 +1,13 @@
-cmake_minimum_required(VERSION 3.8)
+# Set min CMAKE version
+cmake_minimum_required(VERSION 3.16)
+# Project name must match package name in package.xml
 project(luci_messages)
 
+# Get ROS2 cmake macros
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-# find_package(rosidl_default_runtime REQUIRED)
-# find_package(rosidl_typesupport_cpp REQUIRED)
-
+# Set msg files to be converted to .h
 set(msg_files
 "msg/LuciJoystick.msg"
 "msg/LuciZoneScaling.msg"
@@ -19,31 +20,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
 )
 
-# setup targets
-# include_directories(
-#   include
-#   ${rclcpp_INCLUDE_DIRS}
-#   ${std_interfaces_INCLUDE_DIRS}
-# )
-
-# add_library(luci_messages src/library.cpp)
-
-# rosidl_get_typesupport_target(cpp_typesupport_target
-#   ${PROJECT_NAME}_msg rosidl_typesupport_cpp)
-
-#   target_link_libraries(luci_messages "${cpp_typesupport_target}")
-# rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
-# target_link_libraries(${PROJECT_NAME} "${cpp_typesupport_target}") 
-
-# install (TARGETS DESTINATION lib/${PROJECT_NAME})
-
-# install(TARGETS luci_messages DESTINATION lib)
-# install(
-#   TARGETS ${PROJECT_NAME}
-#   LIBRARY DESTINATION lib
-#   ARCHIVE DESTINATION lib
-#   RUNTIME DESTINATION bin
-# )
-
+# Inform packages importing this "library" that the runtime library is needed
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
