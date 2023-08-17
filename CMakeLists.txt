@@ -5,6 +5,7 @@ project(luci_messages)
 
 # Get ROS2 cmake macros
 find_package(ament_cmake REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 # Set msg files to be converted to .h
@@ -13,11 +14,13 @@ set(msg_files
 "msg/LuciZoneScaling.msg"
 "msg/LuciJoystickScaling.msg"
 "msg/LuciDriveMode.msg"
+"msg/LuciImu.msg"
 )
 
 # Generate the message types
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
+  DEPENDENCIES std_msgs
 )
 
 # Inform packages importing this "library" that the runtime library is needed
