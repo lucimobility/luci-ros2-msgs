@@ -23,5 +23,23 @@ See luci-grpc-interface for more instructions on this.
 
 I did play with making a second "Interface" library that links against the generated msg files and could be easily included as a wrapper in other projects. The thought was this would be an easier import as it was just regular CMake and should be able to better locate the runtime .so files without the need for all the LD_LIBRARY path edits mentioned above. This had some success but I believe needs to be made as a static library instead of the default .so. This is worth looking into more but as `colcon build` and sourcing works for our pipeline for now it was put on hold.
 
+There is also an automatic build script called `build-package.sh` that can be ran to build both the ROS package and an installable `.deb` file. This is what the github actions call.
+
+## Releasing new version ##
+When a new version of this package is ready to be released there are a couple steps to follow. It is important to note that most of the process is automated for convenience and the process should be just a couple of button clicks. 
+
+### Steps ### 
+1. Update release version
+    - This should be its own separate PR and should only update the package.xml `<version> </version>` tag. 
+    - LUCI follows [semver](https://semver.org/) style versioning so MAJOR.MINOR.PATCH versions are expected.
+    - It is okay to not put out versions until multiple changes have happened to the code. 
+2. Once the version increment is merged you simply need to create an official release in github. Make sure you make the release version the same as what is now in `package.xml`. We have chosen to keep github release and package version in sync.
+    - This should trigger an action to auto run called `Create and Sign Package` which you can monitor in the github actions panel. This should grab the released code, build it, make an installable .deb file, gdb sign it and push it to jrog artifactory.  
+
+If everything went smoothly congratulations the new package will be released and publicly distributable.
+
+
+<b>NOTE: Once a PR is merged into the `main` branch the docs site in the `next` version will update with it that evening.</b>
+
 
 [Implementation](docs/msgs_package.md)
