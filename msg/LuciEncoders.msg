@@ -1,0 +1,9 @@
+std_msgs/Header header
+
+float32 left_angle
+float32 right_angle
+
+float32 fl_caster_degrees
+float32 bl_caster_degrees
+float32 fr_caster_degrees
+float32 br_caster_degrees

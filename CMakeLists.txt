@@ -15,6 +15,7 @@ set(msg_files
 "msg/LuciJoystickScaling.msg"
 "msg/LuciDriveMode.msg"
 "msg/LuciImu.msg"
+"msg/LuciEncoders.msg"
 )
 
 # Generate the message types
