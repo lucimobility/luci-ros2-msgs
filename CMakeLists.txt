@@ -16,6 +16,7 @@ set(msg_files
 "msg/LuciDriveMode.msg"
 "msg/LuciImu.msg"
 "msg/LuciEncoders.msg"
+"msg/LuciCameraInfo.msg"
 )
 
 # Generate the message types
