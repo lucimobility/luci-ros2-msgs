@@ -19,6 +19,7 @@ The LUCI scaling zones message is based on the on the chair scaling LUCI uses. S
 For example if the joystick was at an angle of 5 degrees from center (placing it in the front zone) and LUCI had a front_fb scaling value of 0.5 and a front_rl scaling value of 1.0 then LUCI would allow the max joystick in the Y axis to be +/- 50 (or 50% of full throw) and would let the max js in the x axis to be +/- 100 (or 100% of full throw) (relative to chair coordinates).
 
 <b>Note:</b>
+
 The LuciJoystickScaling message has the joystick values with the LUCI scaling applied. These are the values most recently used to control the chair and have already been sent to the wheelchairs drive controller. Please note this message also contains the scaling zone that was used for these outputs.
 
 The LuciJoystick message also has the LUCI scaling zone that the input JS would fall in.
