@@ -33,3 +33,5 @@ int32 cal_gyroscope
 int32 cal_accelerometer
 int32 cal_magnetometer
 int32 source
+
+uint32 edge_timestamp

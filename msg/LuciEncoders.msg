@@ -7,3 +7,5 @@ float32 fl_caster_degrees
 float32 bl_caster_degrees
 float32 fr_caster_degrees
 float32 br_caster_degrees
+
+uint32 edge_timestamp
