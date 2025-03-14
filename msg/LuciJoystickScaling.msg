@@ -1,3 +1,4 @@
 int32 forward_back
 int32 left_right
-string joystick_zone
+int32 joystick_zone
+int32 input_source
