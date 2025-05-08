@@ -2,3 +2,5 @@ int32 forward_back
 int32 left_right
 int32 joystick_zone
 int32 input_source
+float32 forward_back_scaling
+float32 left_right_scaling
