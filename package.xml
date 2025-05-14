@@ -4,7 +4,7 @@
   <name>luci_messages</name>
   <version>1.4.0</version>
   <description>Custom Luci message types</description>
-  <maintainer email="christian@luci.com">Christian</maintainer>
+  <maintainer email="shail@luci.com">shail</maintainer>
   
   <license>Apache License 2.0</license>
 
