@@ -13,7 +13,6 @@ set(msg_files
 "msg/LuciJoystick.msg"
 "msg/LuciZoneScaling.msg"
 "msg/LuciJoystickScaling.msg"
-"msg/LuciDriveMode.msg"
 "msg/LuciImu.msg"
 "msg/LuciEncoders.msg"
 "msg/LuciCameraInfo.msg"
