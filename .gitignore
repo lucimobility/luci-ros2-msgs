@@ -54,4 +54,5 @@ debian/
 install/
 log/
 .obj*
+.vscode/
 
