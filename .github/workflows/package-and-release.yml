@@ -7,9 +7,6 @@ on:
 
 env:
   REPO: ${{github.event.repository.name}}
-  # Credentials for Jfrog artifactory
-  JF_URL: ${{ secrets.JF_URL }}
-  JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN}}
 
 jobs:
   package:
@@ -18,6 +15,10 @@ jobs:
     steps:
       #Sets up jfrog cli access for the actions
       - uses: jfrog/setup-jfrog-cli@v3
+        env:
+          # Credentials for Jfrog artifactory
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN}}
 
       - name: Checkout SDK Branch
         uses: actions/checkout@v3
