@@ -8,8 +8,8 @@ This is a custom ros2 message package for LUCI SDK.
 - Follow the documentation on the SDK repository on [github](https://github.com/lucimobility/luci-ros2-sdk/tree/main/development) for manual setup in docker. 
 
 ### Native setup
-- Follow the steps on the [luci-sdk](https://sdk.luci-guci.com/ros2/docs/Installation/manual-installation) repository main readme to install all the dependencies.
-- You have two ways to install the SDK, one by using the provided debians and other by just cloning and buiding the repositories. These methods are explained in detail in the [installation](https://sdk.luci-guci.com/ros2/docs/Installation/Quick-Start/) steps.
+- Follow the steps on the [luci-sdk](https://sdk.luci.com/ros2/docs/Installation/manual-installation) repository main readme to install all the dependencies.
+- You have two ways to install the SDK, one by using the provided debians and other by just cloning and buiding the repositories. These methods are explained in detail in the [installation](https://sdk.luci.com/ros2/docs/Installation/Quick-Start/) steps.
 
 ### File struture to follow
 ```bash
