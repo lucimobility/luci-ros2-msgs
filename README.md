@@ -8,8 +8,8 @@ This is a custom ros2 message package for LUCI SDK.
 - Follow the documentation on the SDK repository on [github](https://github.com/lucimobility/luci-ros2-sdk/tree/main/development) for manual setup in docker. 
 
 ### Native setup
-- Follow the steps on the [luci-sdk](https://lucimobility.github.io/luci-sdk-docs/next/ROS2%20SDK/How-To/Installation/dependencies) repository main readme to install all the dependencies.
-- You have two ways to install the SDK, one by using the provided debians and other by just cloning and buiding the repositories. These methods are explained in detail in the [installation](https://lucimobility.github.io/luci-sdk-docs/ROS2%20SDK/How-To/Installation/luci-ros2-sdk-install) steps.
+- Follow the steps on the [luci-sdk](https://sdk.luci-guci.com/ros2/docs/Installation/manual-installation) repository main readme to install all the dependencies.
+- You have two ways to install the SDK, one by using the provided debians and other by just cloning and buiding the repositories. These methods are explained in detail in the [installation](https://sdk.luci-guci.com/ros2/docs/Installation/Quick-Start/) steps.
 
 ### File struture to follow
 ```bash
@@ -44,7 +44,7 @@ When a new version of this package is ready to be released there are a couple st
     - LUCI follows [semver](https://semver.org/) style versioning so MAJOR.MINOR.PATCH versions are expected.
     - It is okay to not put out versions until multiple changes have happened to the code. 
 2. Once the version increment is merged you simply need to create an official release in github. Make sure you make the release version the same as what is now in `package.xml`. We have chosen to keep github release and package version in sync.
-    - This should trigger an action to auto run called `Create and Sign Package` which you can monitor in the github actions panel. This should grab the released code, build it, make an installable .deb file, gdb sign it and push it to jrog artifactory.  
+    - This should trigger an action to auto run called `Create and Sign Package` which you can monitor in the github actions panel. This should grab the released code, build it, make an installable .deb file, GPG sign it and publish it to the LUCI apt repository.  
 
 If everything went smoothly congratulations the new package will be released and publicly distributable.
 
